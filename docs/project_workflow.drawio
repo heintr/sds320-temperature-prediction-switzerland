@@ -1,0 +1,28 @@
+<mxfile host="app.diagrams.net" modified="2026-11-10T10:30:00.000Z" agent="ChatGPT" version="24.7.17">
+  <diagram id="sds320-temp" name="Page-1">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="SDS320 – Next-day temperature prediction across Switzerland" style="text;html=1;align=center;verticalAlign=middle;fontSize=24;fontStyle=1;" vertex="1" parent="1"><mxGeometry x="280" y="30" width="1040" height="50" as="geometry"/></mxCell>
+        <mxCell id="data" value="1. INPUT DATA&#xa;&#xa;MeteoSwiss TabsD&#xa;Daily mean temperature&#xa;&#xa;MeteoSwiss RhiresD&#xa;Daily precipitation" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="70" y="150" width="240" height="190" as="geometry"/></mxCell>
+        <mxCell id="spatial" value="2. SPATIAL INFORMATION&#xa;&#xa;E / N coordinates&#xa;(from MeteoSwiss grid)&#xa;&#xa;Elevation&#xa;(swisstopo height service)" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="70" y="420" width="240" height="190" as="geometry"/></mxCell>
+        <mxCell id="features" value="3. FEATURE ENGINEERING&#xa;&#xa;Recent temperature lags&#xa;Recent precipitation&#xa;3-day / 7-day summaries&#xa;Day-of-year seasonality&#xa;Coordinates + elevation" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="390" y="270" width="260" height="230" as="geometry"/></mxCell>
+        <mxCell id="split" value="4. TIME-BASED SPLIT&#xa;&#xa;Train: 2015–2022&#xa;Validation: 2023&#xa;Final test: 2024" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="730" y="150" width="230" height="170" as="geometry"/></mxCell>
+        <mxCell id="models" value="5. MODELS&#xa;&#xa;Persistence baseline&#xa;Linear regression&#xa;Histogram Gradient Boosting&#xa;&#xa;Best current model:&#xa;HGB extended + MAE loss" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="730" y="400" width="230" height="220" as="geometry"/></mxCell>
+        <mxCell id="eval" value="6. EVALUATION&#xa;&#xa;MAE / RMSE / R²&#xa;Skill vs persistence&#xa;Spatial error maps&#xa;Seasonal errors&#xa;Error vs elevation" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="1050" y="170" width="240" height="200" as="geometry"/></mxCell>
+        <mxCell id="benchmark" value="7. EXTERNAL BENCHMARK&#xa;&#xa;Historical ECMWF TIGGE forecasts&#xa;&#xa;Compare:&#xa;Our ML model&#xa;vs persistence&#xa;vs numerical weather forecast" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=16;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="1050" y="430" width="240" height="220" as="geometry"/></mxCell>
+        <mxCell id="goal" value="GOAL: How much can recent weather + geography improve next-day temperature prediction across Switzerland?" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;strokeWidth=2;" vertex="1" parent="1"><mxGeometry x="350" y="720" width="700" height="80" as="geometry"/></mxCell>
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="data" target="features"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="spatial" target="features"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="features" target="split"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="features" target="models"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="split" target="models"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="models" target="eval"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="models" target="benchmark"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="eval" target="goal"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=1;strokeWidth=2;" edge="1" parent="1" source="benchmark" target="goal"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,5 @@
+{
+  "selected_model": "HGB delta-T + MAE loss",
+  "validation_MAE_C": 1.4962399313600026,
+  "test_MAE_C": 1.5690580249594386
+}

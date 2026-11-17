@@ -1,0 +1,25 @@
+name: sds320-weather
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - requests
+  - xarray
+  - netcdf4
+  - h5netcdf
+  - h5py
+  - pandas
+  - numpy
+  - matplotlib
+  - scikit-learn
+  - joblib
+  - pyarrow
+  - cdsapi>=0.7.7
+  - cfgrib
+  - eccodes
+  - pyproj
+  - folium
+  - branca
+  - leafmap
+  - jupyterlab
+  - ipykernel

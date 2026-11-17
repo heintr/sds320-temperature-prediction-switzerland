@@ -1,0 +1,17 @@
+requests
+xarray
+netCDF4
+h5netcdf
+h5py
+pandas
+numpy
+matplotlib
+scikit-learn
+joblib
+pyarrow
+cdsapi>=0.7.7
+cfgrib
+eccodes
+pyproj
+jupyterlab
+ipykernel

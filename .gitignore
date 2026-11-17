@@ -1,0 +1,29 @@
+# Large downloaded/generated data
+data/raw/**
+data/processed/**
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/README.md
+
+# Personal API credentials
+.cdsapirc
+*.key
+.env
+.env.*
+
+# Python / Jupyter caches
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temporary download fragments
+*.part
+
+# Keep compact results, figures, and the fitted model in the public repository.
